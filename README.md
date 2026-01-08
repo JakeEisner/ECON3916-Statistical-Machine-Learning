@@ -3,7 +3,7 @@
 Welcome to my GitHub repository for **ECON 3916: Statistical & Machine Learning for Economics**.  
 This repository serves as a digital portfolio showcasing my coursework and applied projects at the intersection of economic theory, statistics, and modern data science.
 
-I am an undergraduate economics student seeking roles in **Data Analysis / Economic Consulting / Finance**, with a strong interest in using data-driven methods to solve real-world economic problems.
+I am an undergraduate economics student seeking roles in **Equity Research & Trading**, with a strong interest in using data-driven methods to solve real-world economic problems.
 
 ---
 
