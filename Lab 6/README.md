@@ -1,4 +1,4 @@
-## Lab 5: The Architecture of Bias
+## Lab 6: The Architecture of Bias
 
 ### Project Overview
 This lab investigates how **bias enters machine learning systems before any model is trained**, through the **Data Generating Process (DGP)** and flawed sampling procedures. Using the Titanic dataset as a controlled environment, the project demonstrates how naïve data splits can create misleading results and how statistical diagnostics can be used to detect hidden engineering failures in experimental systems.
