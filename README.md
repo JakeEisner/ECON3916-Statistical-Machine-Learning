@@ -40,3 +40,67 @@ By completing this course and building this repository, I aim to:
 - Communicate analytical insights clearly and effectively
 
 Thank you for exploring my work.
+
+# Hypothesis Testing & Causal Evidence Architecture  
+### The Epistemology of Falsification: Hypothesis Testing on the Lalonde Dataset
+
+---
+
+## Objective
+
+This lab applies the scientific method to evaluate causal claims using the Lalonde (1986) experimental dataset.  
+
+Rather than focusing purely on estimation, the objective was to test whether the observed treatment effect survives formal falsification. The exercise reframed hypothesis testing as a structured attempt to disprove causality under controlled statistical assumptions.
+
+The central question:  
+Does the estimated Average Treatment Effect (ATE) remain statistically defensible under both parametric and distribution-free inference?
+
+---
+
+## Technical Approach
+
+To construct defensible evidence, I implemented complementary hypothesis testing frameworks using `scipy`:
+
+### 1. Parametric Test — Welch’s T-Test
+- Estimated the Average Treatment Effect (ATE) on post-treatment earnings.
+- Applied Welch’s correction to account for unequal variances between treatment and control groups.
+- Evaluated statistical significance at α = 0.05.
+- Explicitly controlled for Type I error exposure.
+
+### 2. Non-Parametric Validation — Permutation Test (10,000 Resamples)
+- Generated an empirical null distribution by randomly reassigning treatment labels.
+- Avoided normality assumptions given skewed earnings data.
+- Compared permutation-based p-values to parametric results to assess robustness.
+
+Using both frameworks reduces model-dependence and strengthens inferential credibility.
+
+---
+
+## Key Findings
+
+The analysis identified a statistically significant increase in real earnings of approximately **$1,795** for the treatment group.
+
+Both the Welch’s T-Test and the permutation test rejected the Null Hypothesis. The consistency across parametric and non-parametric methods indicates that the observed effect is unlikely to be driven by sampling variability or distributional misspecification.
+
+In falsification terms:  
+If the treatment had no causal effect, observing an effect of this magnitude would be statistically improbable under repeated random assignment.
+
+---
+
+## Business Insight
+
+In experimentation-driven organizations, computing a statistic is trivial. Designing credible inference is not.
+
+Hypothesis testing serves as a structural safeguard against:
+- False positives driven by noise
+- Data mining and overfitting
+- Misinterpreting correlation as causation
+- Decision-making based on unstable signals
+
+In algorithmic and experimentation-heavy environments, rigorous falsification frameworks function as institutional risk control. They ensure that capital, product, and policy decisions are grounded in reproducible evidence rather than narrative bias.
+
+---
+
+**Core Principle:**  
+Evidence is not built by estimating effects.  
+It is built by attempting to invalidate them.
