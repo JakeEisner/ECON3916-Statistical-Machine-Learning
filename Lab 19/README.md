@@ -1,20 +1,22 @@
 # Tree-Based Models — Random Forests
 
 ## Objective  
-Evaluate and compare the predictive performance of tree-based models against linear regularization methods on structured housing data, while analyzing model interpretability and classification capability.
+Evaluate and compare the predictive performance of tree-based models against linear regularization methods on structured housing data, with a focus on model accuracy, generalization, and interpretability.
 
 ## Methodology  
-- Used the California Housing dataset (20,640 observations, 8 features) as the empirical foundation for model comparison  
-- Implemented and evaluated multiple models, including Decision Tree, Ridge Regression, and Random Forest, to assess differences in bias, variance, and predictive accuracy  
-- Tuned Random Forest hyperparameters using GridSearchCV, optimizing across key dimensions such as number of trees, maximum depth, and feature selection per split  
-- Compared feature importance using both Mean Decrease in Impurity (MDI) and permutation importance to highlight differences between model-driven and data-driven importance measures  
-- Extended the analysis to classification by constructing a Random Forest classifier and benchmarking its performance against logistic regression using AUC  
-- Built an interactive dashboard using Plotly and ipywidgets to visualize model outputs, feature importance, and performance metrics dynamically  
+- Used the California Housing dataset (20,640 observations, 8 features) to benchmark model performance  
+- Implemented Decision Tree, Ridge Regression, and Random Forest models to compare bias–variance tradeoffs  
+- Tuned Random Forest hyperparameters using GridSearchCV (n_estimators, max_depth, max_features) to optimize out-of-sample performance  
+- Evaluated models using RMSE and R² on both training and test sets to diagnose overfitting  
+- Compared feature importance using Mean Decrease in Impurity (MDI) and permutation importance to assess robustness of variable rankings  
+- Built a Random Forest classifier and compared performance to logistic regression using AUC  
+- Developed an interactive dashboard with Plotly and ipywidgets to visualize model outputs and feature importance  
 
 ## Key Findings  
-- Random Forest delivered the strongest predictive performance, achieving an R² of **[YOUR VALUE]**, outperforming Ridge Regression at **[YOUR VALUE]**, demonstrating the advantage of non-linear ensemble methods in capturing complex relationships  
-- Decision Trees exhibited higher variance and lower out-of-sample performance relative to ensemble methods  
-- Hyperparameter tuning significantly improved Random Forest performance, particularly through depth control and ensemble size optimization  
-- MDI and permutation importance produced different rankings for key predictors, reinforcing the importance of using multiple interpretability methods  
-- In classification tasks, Random Forest achieved a higher AUC than logistic regression, indicating stronger performance in separating outcome classes under non-linear conditions  
-- The interactive dashboard enhanced interpretability by allowing real-time exploration of model behavior and feature contributions  
+- Random Forest achieved the strongest performance with a test R² of **0.8158**, significantly outperforming Ridge Regression (**0.5759**)  
+- Decision Trees severely overfit the data (Train R² = 1.0000 vs Test R² = 0.6187), highlighting high variance in unregularized tree models  
+- Ridge Regression produced stable but lower predictive accuracy, consistent with linear model limitations in capturing non-linear structure  
+- Hyperparameter tuning improved Random Forest performance, reducing test RMSE to **0.4913**  
+- Feature importance rankings differed between MDI and permutation methods, showing sensitivity to model structure and correlation across predictors  
+- In classification, Random Forest outperformed logistic regression (AUC **0.9611** vs **0.8845**), demonstrating stronger ability to capture non-linear decision boundaries  
+- The interactive dashboard improved interpretability by allowing dynamic exploration of model performance and feature contributions  
