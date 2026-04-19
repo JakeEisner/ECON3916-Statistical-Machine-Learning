@@ -27,3 +27,30 @@ const revealIO = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 
 document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+
+/* ── SKILL BAR ANIMATION ────────────────────── */
+const barIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-bar').forEach(bar => bar.classList.add('in'));
+      barIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+const skillsSection = document.querySelector('.skills-bars');
+if (skillsSection) barIO.observe(skillsSection);
+
+/* ── PROJECT FILTER ─────────────────────────── */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.proj-card').forEach(card => {
+      const tags = card.dataset.tags || '';
+      card.classList.toggle('hidden', filter !== 'all' && !tags.includes(filter));
+    });
+  });
+});

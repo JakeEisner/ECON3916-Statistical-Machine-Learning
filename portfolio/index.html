@@ -19,6 +19,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#interests">Interests</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact" class="nav-cta">Contact ↗</a></li>
       </ul>
@@ -28,6 +30,7 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-inner">
+      <div class="hero-avatar"><img src="headshot.jpg" alt="Jake Eisner"></div>
       <p class="hero-label">Economics &nbsp;·&nbsp; Finance &nbsp;·&nbsp; Data Science</p>
       <h1 class="hero-name">Jake<br>Eisner</h1>
       <div class="hero-rule-row">
@@ -229,6 +232,117 @@
     </div>
   </section>
 
+  <!-- DATA SCIENCE PROJECTS -->
+  <section id="projects" class="bg-subtle">
+    <div class="container">
+      <div class="work-header">
+        <h2 class="section-h">Data Science Projects</h2>
+        <p class="section-sub">Applied ML and econometric research from ECON 3916: Data Science for Economists.</p>
+      </div>
+
+      <div class="proj-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="causal">Causal Inference</button>
+        <button class="filter-btn" data-filter="classification">Classification</button>
+      </div>
+
+      <div class="proj-grid">
+
+        <article class="proj-card reveal" data-tags="ml classification">
+          <p class="proj-num">01</p>
+          <h3>Replicating the NY Fed Yield Curve Recession Model</h3>
+          <p>Replicated the Federal Reserve Bank of New York's recession probability model using FRED data. Demonstrated LPM failure on binary outcomes, then fit logistic regression on the 10Y–3M Treasury spread lagged 12 months to forecast NBER recession months. The model captured every recession in-sample, but the 2022–24 inversion — the longest since the 1980s — produced elevated recession probabilities with no recession materializing, exposing the limits of single-predictor leading-indicator models.</p>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag">scikit-learn</span><span class="tag">statsmodels</span><span class="tag">fredapi</span><span class="tag">Plotly</span>
+            </div>
+            <a href="https://github.com/JakeEisner/ECON3916-Statistical-Machine-Learning/tree/main/Lab%2017" class="proj-link" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="proj-card reveal reveal-mid" data-tags="ml">
+          <p class="proj-num">02</p>
+          <h3>Clustering World Economies with K-Means &amp; PCA</h3>
+          <p>Collected 10 World Bank development indicators for ~160 countries via the wbgapi API, standardized features, and applied K-Means clustering with K=4 — validated by elbow and silhouette analysis. PCA reduced the space to 2D for visualization. Clusters revealed a dense core of similar mid-income countries, with smaller groups separating along unemployment and digital connectivity, challenging traditional GDP-based income classifications.</p>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag">scikit-learn</span><span class="tag">wbgapi</span><span class="tag">pandas</span><span class="tag">matplotlib</span>
+            </div>
+            <a href="https://github.com/JakeEisner/ECON3916-Statistical-Machine-Learning/tree/main/lab%2022" class="proj-link" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="proj-card reveal" data-tags="classification ml">
+          <p class="proj-num">03</p>
+          <h3>Fraud Detection: Metrics Beyond Accuracy</h3>
+          <p>Evaluated logistic regression on 284,807 credit card transactions with a 0.172% fraud rate. Demonstrated the accuracy paradox, optimized classification thresholds via Precision-Recall curves, and incorporated a real-world constraint of 500 daily investigator reviews.</p>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag">scikit-learn</span><span class="tag">pandas</span><span class="tag">matplotlib</span>
+            </div>
+            <a href="https://github.com/JakeEisner/ECON3916-Statistical-Machine-Learning/tree/main/Lab%2018" class="proj-link" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="proj-card reveal reveal-mid" data-tags="causal ml">
+          <p class="proj-num">04</p>
+          <h3>Causal ML: 401(k) Policy Evaluation</h3>
+          <p>Estimated the causal effect of 401(k) eligibility on household net financial assets using Double Machine Learning. Random Forest nuisance learners with 5-fold cross-fitting separated prediction from causal inference. Conducted CATE analysis by income quartile and sensitivity analysis for unobserved confounding.</p>
+          <div class="proj-footer">
+            <div class="tags">
+              <span class="tag">DoubleML</span><span class="tag">scikit-learn</span><span class="tag">pandas</span><span class="tag">matplotlib</span>
+            </div>
+            <a href="https://github.com/JakeEisner/ECON3916-Statistical-Machine-Learning/tree/main/Lab%2024" class="proj-link" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH INTERESTS -->
+  <section id="interests">
+    <div class="container">
+      <h2 class="section-h">Research Interests</h2>
+      <div class="interests-grid">
+
+        <div class="interest-card reveal">
+          <div class="interest-icon">⟂</div>
+          <h3>Causal Inference &amp; Policy Evaluation</h3>
+          <p>Separating correlation from causation in observational economic data using modern identification strategies — Double ML, instrumental variables, and difference-in-differences. Particularly interested in policy settings where randomization is infeasible but natural experiments exist.</p>
+          <div class="tags">
+            <span class="tag">DoubleML</span><span class="tag">IV / 2SLS</span><span class="tag">DiD</span><span class="tag">Treatment Effects</span>
+          </div>
+        </div>
+
+        <div class="interest-card reveal reveal-mid">
+          <div class="interest-icon">∿</div>
+          <h3>NLP in Finance &amp; Economics</h3>
+          <p>Using text as data to extract signals from unstructured financial documents — central bank communications, earnings transcripts, and analyst reports. Interested in how language shifts precede measurable changes in asset prices and economic conditions.</p>
+          <div class="tags">
+            <span class="tag">TF-IDF</span><span class="tag">Sentiment Analysis</span><span class="tag">FOMC</span><span class="tag">LLMs</span>
+          </div>
+        </div>
+
+        <div class="interest-card reveal reveal-late">
+          <div class="interest-icon">◈</div>
+          <h3>Quantitative Asset Management</h3>
+          <p>Applying statistical and ML methods to portfolio construction, factor exposure analysis, and risk management — connecting academic finance research to institutional investment practice. Grounded in hands-on experience across a $655B AUM platform at MFS.</p>
+          <div class="tags">
+            <span class="tag">Factor Models</span><span class="tag">Risk Analytics</span><span class="tag">Portfolio Construction</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="current-work reveal">
+        <p class="current-work-label">What I'm working on</p>
+        <p>Preparing for my Equity &amp; Credit Research Co-op at Valens Research starting July 2026, where I will apply Uniform Accounting standards to cash flow analysis distributed to 100,000+ subscribers. Continuing weekly macroeconomic research for Bull &amp; Bear, Northeastern's equity research group.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- EDUCATION -->
   <section id="education" class="bg-subtle">
     <div class="container">
@@ -270,43 +384,56 @@
     </div>
   </section>
 
-  <!-- CAPABILITIES -->
-  <section id="skills">
+  <!-- SKILLS & TOOLS -->
+  <section id="skills" class="bg-subtle">
     <div class="container">
-      <h2 class="section-h">Capabilities</h2>
-      <div class="cap-grid reveal">
+      <h2 class="section-h">Skills &amp; Tools</h2>
 
-        <div class="cap-group">
-          <h3>Tools &amp; Platforms</h3>
-          <div class="pill-row">
-            <span class="pill">Bloomberg Terminal</span>
-            <span class="pill">Microsoft Excel</span>
-            <span class="pill">PowerPoint</span>
-            <span class="pill">Python</span>
-            <span class="pill">Salesforce</span>
-            <span class="pill">Stata</span>
+      <div class="skills-layout">
+
+        <div class="skills-bars reveal">
+          <div class="skill-category-label">Statistics &amp; Econometrics</div>
+          <div class="skill-row"><span class="skill-name">Regression &amp; Causal Inference</span><div class="skill-track"><div class="skill-bar" style="--pct:88%"></div></div><span class="skill-pct">88</span></div>
+          <div class="skill-row"><span class="skill-name">Hypothesis Testing</span><div class="skill-track"><div class="skill-bar" style="--pct:85%"></div></div><span class="skill-pct">85</span></div>
+          <div class="skill-row"><span class="skill-name">Time Series</span><div class="skill-track"><div class="skill-bar" style="--pct:70%"></div></div><span class="skill-pct">70</span></div>
+
+          <div class="skill-category-label" style="margin-top:1.5rem;">Machine Learning</div>
+          <div class="skill-row"><span class="skill-name">Tree Models &amp; Ensembles</span><div class="skill-track"><div class="skill-bar" style="--pct:82%"></div></div><span class="skill-pct">82</span></div>
+          <div class="skill-row"><span class="skill-name">Classification &amp; Model Evaluation</span><div class="skill-track"><div class="skill-bar" style="--pct:80%"></div></div><span class="skill-pct">80</span></div>
+          <div class="skill-row"><span class="skill-name">NLP &amp; Text Analysis</span><div class="skill-track"><div class="skill-bar" style="--pct:68%"></div></div><span class="skill-pct">68</span></div>
+
+          <div class="skill-category-label" style="margin-top:1.5rem;">Data &amp; Visualization</div>
+          <div class="skill-row"><span class="skill-name">Python (pandas, scikit-learn)</span><div class="skill-track"><div class="skill-bar" style="--pct:80%"></div></div><span class="skill-pct">80</span></div>
+          <div class="skill-row"><span class="skill-name">Plotly &amp; matplotlib</span><div class="skill-track"><div class="skill-bar" style="--pct:75%"></div></div><span class="skill-pct">75</span></div>
+          <div class="skill-row"><span class="skill-name">SQL</span><div class="skill-track"><div class="skill-bar" style="--pct:65%"></div></div><span class="skill-pct">65</span></div>
+
+          <div class="skill-category-label" style="margin-top:1.5rem;">Finance &amp; Domain Tools</div>
+          <div class="skill-row"><span class="skill-name">Excel &amp; Financial Modeling</span><div class="skill-track"><div class="skill-bar" style="--pct:92%"></div></div><span class="skill-pct">92</span></div>
+          <div class="skill-row"><span class="skill-name">Bloomberg Terminal</span><div class="skill-track"><div class="skill-bar" style="--pct:85%"></div></div><span class="skill-pct">85</span></div>
+          <div class="skill-row"><span class="skill-name">Salesforce CRM</span><div class="skill-track"><div class="skill-bar" style="--pct:78%"></div></div><span class="skill-pct">78</span></div>
+        </div>
+
+        <div class="skills-aside reveal reveal-late">
+          <div class="cap-group">
+            <h3>Certifications</h3>
+            <ul class="cert-list">
+              <li>Economics for Capital Markets</li>
+              <li>Generative AI in Finance &amp; Accounting</li>
+              <li>Applied Fixed Income</li>
+            </ul>
           </div>
-        </div>
 
-        <div class="cap-group">
-          <h3>Certifications</h3>
-          <ul class="cert-list">
-            <li>Economics for Capital Markets</li>
-            <li>Generative AI in Finance &amp; Accounting</li>
-            <li>Applied Fixed Income</li>
-          </ul>
-        </div>
-
-        <div class="cap-group">
-          <h3>Interests</h3>
-          <div class="pill-row">
-            <span class="pill">Aviation</span>
-            <span class="pill">Acoustic Guitar</span>
-            <span class="pill">RC Vehicles</span>
-            <span class="pill">Ancient Roman History</span>
-            <span class="pill">Jets Football</span>
-            <span class="pill">Bonsai</span>
-            <span class="pill">Oasis</span>
+          <div class="cap-group" style="margin-top:2rem;">
+            <h3>Interests</h3>
+            <div class="pill-row">
+              <span class="pill">Aviation</span>
+              <span class="pill">Acoustic Guitar</span>
+              <span class="pill">RC Vehicles</span>
+              <span class="pill">Ancient Roman History</span>
+              <span class="pill">Jets Football</span>
+              <span class="pill">Bonsai</span>
+              <span class="pill">Oasis</span>
+            </div>
           </div>
         </div>
 
